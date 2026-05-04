@@ -99,7 +99,6 @@ function setCookie(name,val){
 function getCookie(name)
 {
   let cookieStr = decodeURIComponent(document.cookie);
-  alert(cookieStr);
   let splitStr = cookieStr.split(";");
   for (i = 0; i < splitStr.length(); i++)
   {
