@@ -16,12 +16,12 @@ var yesterday = null;
 // will hold the day before yesterday (or ereyesterday) as a String
 var ereyesterday = null;
 
-// base cookie for ozDrank today
-
-document.cookie = "username=todayOz=0;";
-
 // will store oz drank in one day
 var ozDrank = getCookie("todayOz"); 
+
+// base cookie for ozDrank today
+
+document.cookie = setCookie("todayOz",ozDrank);
 
 // if today isn't Sunday, yesterday is one spot backward in the array. If today is Sunday, yesterday is at the end of the array.
 if (todayDate.getDay() > 0)
@@ -95,9 +95,6 @@ function setCookie(name,val)
   let exDate = d.getUTCDate();
   document.cookie = "username=" + name + "=" + val + ";" + "expires=" + exDate +";" + "path=/";
 }
-
-            
-
 // retrieves cookie if it exists 
 // used to help: w3schools3
 function getCookie(cname) 
@@ -125,6 +122,7 @@ function clearOz(){
 function oz4(){
   ozDrank = ozDrank + 4;
   setCookie("todayOz",ozDrank);
+  alert(getCookie("todayOz"));
 }
 
 // will add 8 to ozDrank if button is pressed
