@@ -123,6 +123,7 @@ function oz4(){
   ozDrank = Number(ozDrank) += Number(4);
   setCookie("todayOz",ozDrank);
   load();
+  alert(ozDrank);
 }
 
 // will add 8 to ozDrank if button is pressed
